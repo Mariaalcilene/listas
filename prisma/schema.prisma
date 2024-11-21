@@ -13,8 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
  
- model taks{
- id int @id @default(autoincrement())
- titulo string @db.varchar(100)
- descricao string @db.varchar(100)
- }
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+}

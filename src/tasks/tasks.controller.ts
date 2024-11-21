@@ -12,8 +12,8 @@ export class TasksController {
   }
 
   @Post() // Rota POST para criar uma nova tarefa
-  createTask(@Body('title') title: string, @Body('description') description: string): Task {
-    return this.tasksService.createTask(title, description);
+  createTask(@Body() task: Task): Task {
+    return this.tasksService.createTask(task);
   }
 }
 
